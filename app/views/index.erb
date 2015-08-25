@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Craiglist Jr.</h1>
+  <% unless @categories.empty? %>
+  <p>What are you looking for? Check out the categories below:</p>
+  <ol>
+  <% @categories.each do |category| %>
+     <li>
+  <a href="/category/choice/<%= category.id %>"><%= category.name %></a>
+     </li>
+  <%end%>
+  <%else%>
+  <p>Oops...they're no new posts! Would you like to make one?</p>
+ <%end%>
+  </ol>
+</div>

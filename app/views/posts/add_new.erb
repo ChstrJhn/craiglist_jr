@@ -1,0 +1,23 @@
+<div class="container">
+
+<h2> Add a New Post to Craigslist Jr.</h2>
+<p>
+<form action="/posts/add_new/form" method="post">
+ <p><b>Your Name: </b> <input type="text" name="post[name]"></p>
+ <p><b>Item Price: </b><input type="text" name="post[price]"></p>
+  <p><b>Your Email: </b><input type="text" name="post[email]"><p>
+<p><b>Choose a Category: </b>
+  <select name="post[category_id]">
+  <%@categories.each do |category|%>
+  <option value="<%=category.id%>"><%=category.name%></option>
+  <%end%>
+  </select>
+</p>
+<p><b>Title: </b> <input type="text" name="post[title]"></p>
+<p><b>Please Describe Your Listing: </b></p>
+<textarea name="post[description]"></textarea></p>
+<p><input type="submit" value="Post it!"></p>
+</form>
+</p>
+<p>Not sure what to write? No worries, take a look at our <a href = "/">current listings first!</a></p>
+</div>

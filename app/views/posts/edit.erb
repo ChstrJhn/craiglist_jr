@@ -1,0 +1,18 @@
+<div class="container">
+
+<h2>Edit this post</h2>
+
+
+<% @edit_post.each do |post| %>
+<form action="/posts/update/<%= post.secret_key%>" method="post">
+<p><b>Edit Name: </b> <input type="text" name="post[name]" value ="<%=post.name%>" placeholder="<%=post.name%>"></p>
+<p><b>Edit Price: </b><input type="text" name="post[price]" value ="<%=post.price%>"placeholder="<%=post.price%>"></p>
+<p><b>Edit Email: </b><input type="text" name="post[email]" value ="<%=post.email%>"placeholder="<%=post.email%>"><p>
+<p><b>Edit Title: </b> <input type="text" name="post[title]" value ="<%=post.title%>"placeholder="<%=post.title%>"></p>
+<p><b>Edit Listing: </b></p>
+<textarea name="post[description]" value ="<%=post.description%>" placeholder="<%=post.description%>"></textarea></p>
+<%end%>
+<p><input type="submit" value="Post it!"></p>
+</form>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <a href = "/"><h1>Craiglist Jr.</h1></a>
+  <% unless @posts.empty? %>
+  <p>Here are the latest posts:</p>
+  <ol>
+  <% @posts.each do |post| %>
+     <li>
+  <a href = "/category/choice/<%=post.category_id%>/<%=post.secret_key%>"><strong><%= post.title %></strong></a><br>
+  <%= post.description %>
+  </li>
+  <%end%>
+  <%else%>
+  <p>Oops...they're no new posts! Would you like to make one?</p>
+ <%end%>
+  </ol>
+  <p>That's it! Would you like to <a href="/posts/add_new/">add a new post?</a></p>
+</div>

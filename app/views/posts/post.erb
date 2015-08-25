@@ -1,0 +1,13 @@
+<div class="container">
+<a href="/"><h1>Craiglist Jr.</h1></a>
+  
+<% @posted.each do |post| %>
+<h2><%= post.title %></h2>
+<p><b>Posted by:</b><%= post.name %></p> 
+<p><b>Item price:</b>RM<%= post.price %></p>
+<p><b>What <%=post.name%> has to say about the <%=post.title%></b>:</p>
+<p><%= post.description%></p>
+<form action="post/update/<%= post.secret_key%>" method="post">
+<input type="submit" value="Edit this post">
+<%end%>
+</div>
